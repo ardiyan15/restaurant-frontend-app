@@ -19,7 +19,6 @@ const List: React.FC = () => {
       const fetchedData: ListItem[] = response.data.data.data;
 
       if (pageRef.current <= response.data.data.last_page) {
-        //   setListData(fetchedData)
         setListData((prev) => [...prev, ...fetchedData]);
         pageRef.current++;
       } else {

@@ -5,7 +5,6 @@ import { ListItem } from "../../interfaces/interface";
 
 const List: React.FC = () => {
   const [listData, setListData] = useState<ListItem[]>([]);
-  //   const [page, setPage] = useState<number>(1);
   const pageRef = useRef<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
@@ -34,7 +33,7 @@ const List: React.FC = () => {
   const handleScroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight - 50 // Load more when near bottom
+      document.documentElement.offsetHeight - 50
     ) {
       fetchData();
     }

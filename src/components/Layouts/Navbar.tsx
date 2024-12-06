@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <Link to={"/"} className="nav-item nav-link active">
+          Home
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,9 +21,6 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link to={"/"} className="nav-item nav-link active">
-              Home
-            </Link>
             {IsAuthorize() && (
               <Link to={"/form"} className="nav-item nav-link">
                 Add Restaurant

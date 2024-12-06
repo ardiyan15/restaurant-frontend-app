@@ -16,12 +16,6 @@ const List: React.FC = () => {
     day: ""
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    console.log(e.target.value);
-    setFilters((prev) => ({ ...prev, [name]: value }));
-  };
-
   const fetchData = async () => {
     if (isLoading) return;
 
@@ -47,7 +41,6 @@ const List: React.FC = () => {
   };
 
   const handleFilter = async () => {
-    console.log(filters.day)
     const response = await fetchRestaurant({
         page: 1,
         name: filters.name,
@@ -58,7 +51,6 @@ const List: React.FC = () => {
       });
 
       const fetchedData: ListItem[] = response.data.data.data;
-      console.log(fetchedData)
       setListData(fetchedData);
   };
 
@@ -73,7 +65,6 @@ const List: React.FC = () => {
 
   useEffect(() => {
     fetchData();
-    console.log(listData)
   }, []);
 
   useEffect(() => {
